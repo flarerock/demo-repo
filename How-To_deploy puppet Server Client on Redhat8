@@ -1,0 +1,19 @@
+#Server side:
+sudo rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+sudo yum install -y puppetserver
+
+#Edit file:
+/etc/sysconfig/puppetserver 
+
+#Change below line:
+
+From JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m" to JAVA_ARGS="-Xms512m -Xmx512m-XX:MaxPermSize=256m"
+
+#added below line to /etc/export
+export PATH=$PATH:/opt/puppetlabs/bin/puppet
+
+systemctl start puppetserver
+
+#check cetificate list 
+
+/opt/puppetlabs/bin/puppet cert list
