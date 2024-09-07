@@ -1,3 +1,6 @@
 1.change hostname 
 hostnamectl set-hostname New_name
 change hostname temporarily: hostname New_name
+2.Set alias 
+alias T="terraform" #put the file under .bashrc
+  
